@@ -1,6 +1,10 @@
+import { guardarProductoEnCarrito } from "../utils/carritoStorage.js";
+
 export function createModal(producto) {
   let containerModal = document.querySelector('#exampleModal1');
-
+  window.guardarEnCarrito = (prod) => {
+    guardarProductoEnCarrito(prod);
+  }
   let template = `
     <div class="modal-dialog">
       <div class="modal-content">
@@ -14,8 +18,9 @@ export function createModal(producto) {
           <p><strong>Price:</strong> $${producto.price}</p>
         </div>
         <div class="modal-footer">
-        <button type="button" class="btn btn-primary"><span><i class="bi bi-cart4"></i></span> Añadir al carrito</button>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" onclick='guardarEnCarrito(${JSON.stringify(producto).replace(/'/g, "&#39;").replace(/"/g, '&quot;')})'><span><i class="bi bi-cart4"></i></span> Añadir al carrito</button>
+        
         </div>
       </div>
     </div>`;
