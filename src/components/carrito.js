@@ -64,14 +64,31 @@ export function crearSeccionCarrito(carrito) {
     }
 
     window.eliminarProducto = (id) => {
-        let idx = carrito.findIndex(item => item.id === id);
-        eliminarProductoCarrito(carrito, idx);
-        let card = document.querySelector(`#card-${id}`);
-        containerCarrito.removeChild(card);
-        actualizarTotalCarrito(carrito);
-        actualizarSpanCantidad(id, carrito[idx].cantidad);
-        
-    }
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "¡No podrás revertir esta acción!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, eliminar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            let idx = carrito.findIndex(item => item.id === id);
+            eliminarProductoCarrito(carrito, idx);
+            let card = document.querySelector(`#card-${id}`);
+            if (card) containerCarrito.removeChild(card);
+            actualizarTotalCarrito(carrito);
+            // No actualices cantidad aquí porque el producto fue eliminado
+            Swal.fire(
+                '¡Eliminado!',
+                'El producto fue eliminado del carrito.',
+                'success'
+            );
+        }
+    });
+}
 }
 
 function actualizarSpanCantidad(id, cantidad) {

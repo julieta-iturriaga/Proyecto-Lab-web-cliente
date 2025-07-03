@@ -13,7 +13,7 @@ export function createCards(data){
             let estrellasProducto = p.rating?.rate ? generarEstrellas(p.rating.rate) : '';
             let template = `<div class="col"> 
                     <div class="card h-100 shadow-sm border-0">
-                    <img src="${p.image}" class="card-img-top img-fluid" alt="${p.title}" style="height: 350px; object-fit: contain">
+                    <img src="${p.image}" class="card-img-top img-fluid" alt="${p.title}" style="height: 350px; object-fit: contain" >
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title text-truncate">${p.title}</h5>
                          <div class="mb-2">

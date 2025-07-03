@@ -1,10 +1,11 @@
 import { guardarProductoEnCarrito } from "../utils/carritoStorage.js";
-
+import { generarEstrellas } from "../utils/estrellas.js";
 export function createModal(producto) {
   let containerModal = document.querySelector('#exampleModal1');
   window.guardarEnCarrito = (prod) => {
     guardarProductoEnCarrito(prod);
   }
+  let estrellasProducto = producto.rating?.rate ? generarEstrellas(producto.rating.rate) : '';
   let template = `
     <div class="modal-dialog">
       <div class="modal-content">
@@ -15,6 +16,9 @@ export function createModal(producto) {
         <div class="modal-body">
           <img src="${producto.image}" class="card-img-top img-fluid mb-3" alt="${producto.title}" style="height: 350px; object-fit: contain">
           <p>${producto.description}</p>
+          <div class="mb-2">
+                            ${estrellasProducto}
+          </div>
           <p><strong>Price:</strong> $${producto.price}</p>
         </div>
         <div class="modal-footer">

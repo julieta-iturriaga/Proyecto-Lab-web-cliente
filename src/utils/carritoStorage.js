@@ -9,6 +9,15 @@ export function guardarProductoEnCarrito(producto) {
 
     let modalInstance = bootstrap.Modal.getInstance(document.getElementById("exampleModal1"));
 modalInstance.hide();
+Swal.fire({
+        icon: 'success',
+        title: 'Producto agregado',
+        showConfirmButton: false,
+        timer: 1200,
+        toast: true,
+        position: 'top-end',
+        timerProgressBar: true
+    });
 }
 
 export function validarProductoEnCarrito(carrito, producto) {
