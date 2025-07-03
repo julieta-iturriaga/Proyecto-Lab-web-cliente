@@ -1,7 +1,7 @@
 # Tiendapi - Proyecto Laboratorio Aplicaciones Web Cliente
 
 **Autores:**  
-Julieta Iturriaga - Pablo Britez Santana - julidanit
+Julieta Iturriaga (julidanit) - Pablo Britez Santana (BritezSantana)
 
 ---
 
@@ -52,11 +52,11 @@ La aplicación permite listar productos, mostrar detalles en un modal, manejar u
 | Fecha    | Descripción                                                  | Autor              |
 |----------|--------------------------------------------------------------|--------------------|
 | 26-05-25 | Initial commit - Proyecto iniciado                              | julieta-iturriaga |
-| 08-06-25 | Avances de la segunda clase                                     | julidanit         |
-| 23-06-25 | Clase 30-05-25 - Avances y correcciones varias                  | SantanaPablo      |
-| 27-06-25 | Ajustes en almacenamiento local y funcionalidad de botones      | julidanit         |
-| 03-07-25 | Agregado sistema de estrellas en las cards para mostrar rating  | SantanaPablo      |
-| 03-07-25 | Mejoras en localStorage y configuración de botones para carrito | SantanaPablo      |
+| 08-06-25 | Avances de la segunda clase                                     | julieta-iturriaga |
+| 23-06-25 | Clase 30-05-25 - Avances y correcciones varias                  | BritezSantana     |
+| 27-06-25 | Ajustes en almacenamiento local y funcionalidad de botones      | julieta-iturriaga |
+| 03-07-25 | Agregado sistema de estrellas en las cards para mostrar rating  | BritezSantana     |
+| 03-07-25 | Mejoras en localStorage y configuración de botones para carrito | BritezSantana     |
 | Reciente | Agregó modal de contacto y SweetAlert para confirmaciones y mensajes | julieta-iturriaga |
 
 ---
