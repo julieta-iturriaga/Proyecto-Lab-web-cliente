@@ -6,6 +6,9 @@ export function guardarProductoEnCarrito(producto) {
     validarProductoEnCarrito(carrito, producto);
     guardarEnLocalStorage(carrito);
     crearSeccionCarrito(carrito);
+
+    let modalInstance = bootstrap.Modal.getInstance(document.getElementById("exampleModal1"));
+modalInstance.hide();
 }
 
 export function validarProductoEnCarrito(carrito, producto) {
@@ -31,4 +34,16 @@ export function sumarCantidadProducto(carrito, idx) {
 export function restarCantidadProducto(carrito, idx) {
     if (carrito[idx].cantidad > 1) carrito[idx].cantidad -= 1;
     
+}
+export function eliminarProductoCarrito(carrito, idx) {
+    carrito.splice(idx, 1);
+    guardarEnLocalStorage(carrito);
+}
+
+export function actualizarTotalCarrito(carrito) {
+    let total = carrito.reduce((acc, prod) => acc + prod.price * prod.cantidad, 0);
+    let totalSpan = document.querySelector('#total-carrito');
+    if (totalSpan) {
+        totalSpan.innerHTML = `$${total.toFixed(2)}`;
+    }
 }

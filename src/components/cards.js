@@ -1,15 +1,13 @@
-import { getProducts } from "./../api/api.js";
+
 import { createModal } from "./modal.js";
 
-export function createCards(){
+export function createCards(data){
     let containerCards = document.querySelector('#list-products');   
+    containerCards.innerHTML = '';
     
-    getProducts().then((data) => {
-        window.mostrarDetalle = (prod) =>{
+ window.mostrarDetalle = (prod) =>{
              createModal(prod); // Llama a createModal con los datos del producto
         };
-
-
         data.forEach((p) => {
             let template = `<div class="col"> 
                     <div class="card h-100 d-flex flex-column">
@@ -26,7 +24,7 @@ export function createCards(){
                     </div>
                 </div>`;
             containerCards.innerHTML += template
-            
-        });
+
+   
     });
 }
